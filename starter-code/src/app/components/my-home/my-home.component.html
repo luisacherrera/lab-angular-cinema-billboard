@@ -1,3 +1,8 @@
-<p>
-  my-home works!
-</p>
+<ul>
+  <li *ngFor = 'let movie of movies'>
+    <p> Room: {{ movie.room }} </p>
+    <img [src] = 'movie.poster'>
+    <p> {{ movie.title }} </p>
+    <button (click)='goToMovie(movie.id)'>Go to detail</button>
+  </li>
+</ul>
