@@ -12,13 +12,15 @@ export class MyMovieComponent implements OnInit {
   movie: any;
 
   constructor(private moviesService : MoviesService, private activatedRoute: ActivatedRoute) { 
-    this.activatedRoute.params
-    .subscribe(params => this.id =params.id);
+
   }
 
   ngOnInit() {
-    this.movie = this.moviesService.getMovie(this.id);
-    console.log(this.movie);
+    this.activatedRoute.params
+      .subscribe(params => {
+        this.id =params.id
+        this.movie = this.moviesService.getMovie(Number(this.id));
+      });
   }
 
 }

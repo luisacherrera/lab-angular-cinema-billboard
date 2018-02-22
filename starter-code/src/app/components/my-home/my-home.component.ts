@@ -11,10 +11,10 @@ export class MyHomeComponent implements OnInit {
   movies: Array<Object>;
 
   constructor(private moviesService : MoviesService, private router: Router) { 
-    this.movies = this.moviesService.getMovies();
   }
 
   ngOnInit() {
+    this.movies = this.moviesService.getMovies();
   }
 
   goToMovie(id) {

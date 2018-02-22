@@ -1,3 +1,9 @@
-<p>
+<p *ngIf="!movie">Loading your movie... </p>
+
+<p *ngIf="movie">
  {{ movie.title }}
 </p>
+
+<a [routerLink]="['/movie', movie.id+1]">Next movie</a>
+<a [routerLink]="['/movie', movie.id-1]">Previous movie</a>
+
